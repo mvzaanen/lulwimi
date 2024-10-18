@@ -61,6 +61,7 @@ def generate_wordcloud(data):
                        contour_width = 3, contour_color = "steelblue")
         wc.generate(data["tokenized_text"][counter])
         plt.axis("off")
+        plt.imshow(wc)
         data["wordcloud"].append(data["bases"][-1] + ".png")
         plt.savefig(data["output_dir"] + "/" + data["wordcloud"][-1], bbox_inches = "tight")
     return data
@@ -189,6 +190,7 @@ def draw_topic_wordclouds(data):
     plt.tight_layout()
     data["topic_cloud"] = "topic_cloud.png"
     plt.savefig(data["output_dir"] + "/" + data["topic_cloud"], bbox_inches = "tight")
+#    plt.show()
     return data
 
 
